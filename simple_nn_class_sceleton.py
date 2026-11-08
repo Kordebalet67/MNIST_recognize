@@ -97,15 +97,15 @@ print("="*46 + ' Result ' + "="*46)
 print(result)
 print("="*100)
 
-inputs, targets = get_inputs_and_targets('mnist_train_100.csv')
+# inputs, targets = get_inputs_and_targets('mnist_train_100.csv')
 
-epochs = 50
-error_value_list = []
-for i in epochs:
-    error_value_list.append(net.train(inputs[0], targets[0]))
-min_error = min(error_value_list)
-best_epoch_value = error_value_list.index(min_error) + 1
+# epochs = 50
+# error_value_list = []
+# for i in epochs:
+#     error_value_list.append(net.train(inputs[0], targets[0]))
+# min_error = min(error_value_list)
+# best_epoch_value = error_value_list.index(min_error) + 1
 
-for i in range(best_epoch_value):
-    net.train(inputs[0], targets[0])
-net.query
+# for i in range(best_epoch_value):
+#     net.train(inputs[0], targets[0])
+# net.query
