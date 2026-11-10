@@ -29,12 +29,13 @@ class MNIST_Neural_Network:
     # here we'll make all settings and train features of our network
     def train(self, training_list_path = "mnist_train_100.csv"):
         for e in range(self.epochs):
-            print(f"Epoch {e}", end='\r')
+            print(f"Epoch {e} / {self.epochs}", end='\r')
             with open(training_list_path, 'r') as file:
                 training_list = file.readlines()
 
             # go through all records in the training data set
             for record in training_list:
+                print(f"{training_list.index(record)} / {len(training_list)}", end='\r')
                 # split the record by the ',' commas
                 all_values = record.split(',')
                 # scale and shift the inputs
