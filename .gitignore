@@ -1,1 +1,3 @@
-.vscode/
+.vscode
+mnist_test.csv
+mnist_train.csv
