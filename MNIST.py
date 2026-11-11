@@ -6,7 +6,8 @@ import joblib
 
 class MNIST_Neural_Network:
     """
-    base class for our own neural network.
+    Base class for our own neural network.
+    Contains from three layers with only one hidden.
     """
 
     # constructor method, arguments:
@@ -106,16 +107,19 @@ class MNIST_Neural_Network:
         scorecard_array = np.asarray(scorecard)
         final_score = scorecard_array.sum() / scorecard_array.size
         print (f"performance = {final_score}" )
+        pass
 
-    def save_weights(self, file_name):
+    def save_weights(self, file_name: str):
         w_dict = {'ih': self.weights_input_hidden,
         'ho': self.weights_hidden_output}
         joblib.dump(w_dict, file_name)
+        pass
 
-    def load_weights(self, file_name):
+    def load_weights(self, file_name: str):
         load_weights = joblib.load(file_name)
         self.weights_input_hidden = load_weights['ih']    
         self.weights_hidden_output = load_weights['ho']
+        pass
 
     def return_answers(self, input_data):
         answers = self.query(input_data)
